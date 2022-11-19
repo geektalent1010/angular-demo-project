@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+button {
+    @apply rounded-2xl px-3 py-1 border-2 text-green-400 border-green-400;
+}

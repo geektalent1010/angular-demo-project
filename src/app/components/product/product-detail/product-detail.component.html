@@ -1,0 +1,9 @@
+<div  *ngIf="product" class="flex flex-row pt-10">
+    <img *ngIf="product.images" src={{product.images[0].url}}>    
+    <div>
+        <p class="mt-5 font-semibold" *ngIf="product.priceList">{{product.priceList[0].value | currency}}</p>
+        <p class="my-5" *ngIf="product.description">{{product.description}}</p>
+        <p *ngIf="product.stock">{{product.stock.stockLevelStatus.code}}</p>
+        <button type="button" class="mt-5" (click)="goBack()">Back</button>
+    </div>
+</div>

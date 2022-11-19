@@ -1,0 +1,18 @@
+<div class="rounded-2xl bg-white flex flex-col items-center py-3 mb-3 px-3 min-h-[100%]" [ngClass]="selected ? 'new' : 'old'">
+    <div class="h-[300px] flex items-center"  >
+        <img *ngIf="product.images" src={{product.images[0].url}} class="py-3 align-middle">
+    </div>
+    <div class="h-[48px]">
+        <h2 class="mt-3 font-semibold text-center text-center" *ngIf="product.name">{{product.name}}</h2>
+    </div>
+    <div class="flex flex-row items-center justify-center">
+        <button class="mr-5" (click)="togglePreview()">Preview</button>
+        <button class="ml-5" (click)="showDetail()">Details</button>
+    </div>
+    <div *ngIf="showPreview" class="flex flex-col items-center justify-center">
+        <h2 class="my-3 font-bold text-center" *ngIf="product.code">{{product.code}}</h2>
+        <h2 class="font-bold" *ngIf="product.priceList">{{product.priceList[0].value | currency}}</h2>
+        <button class="btn my-3 mx-5 bg-amber-200" (click)="change()">{{ buttonLabel }}</button>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+
+<div class="grid 4xl:grid-cols-5 3xl:grid-cols-4 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4 grow">
+    <div *ngFor="let product of products | paginate: { itemsPerPage: 4, currentPage: currentPage }" >
+        <app-product-card [product]="product" [selected]="product.selected"></app-product-card> 
+    </div>
+    <pagination-controls class="float-center" (pageChange)="handlePageChange($event)" previousLabel="Prev" nextLabel="Next"></pagination-controls>
+</div>
+
+<div class="rounded-md bg-green-100 min-w-[300px] ml-5">
+    <app-selection></app-selection>
+</div>
+
+

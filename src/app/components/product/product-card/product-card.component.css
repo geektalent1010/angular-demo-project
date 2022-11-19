@@ -1,0 +1,6 @@
+.old {
+    @apply bg-white;
+}
+.new {
+    @apply bg-gray-400;
+}
